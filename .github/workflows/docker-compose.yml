@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - ENVIRONMENT=dev
+    ports:
+      - 8080:8080
+    volumes:
+      - .:/app
+    command: >
+      bash -c "
+        git clone -b develop  https://github.com/dharmakolla/go-weirdo.git /app &&
+        npm start
+      "
