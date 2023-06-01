@@ -29,7 +29,7 @@ jobs:
         with:
           node-version: 16
           registry-url: https://npm.pkg.github.com/
-      - run: npm adduser dharmakolla
+      - run: npm adduser
       - run: npm ci
       - run: npm publish
         env:
